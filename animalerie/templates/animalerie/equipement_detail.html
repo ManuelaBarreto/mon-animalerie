@@ -1,0 +1,50 @@
+{% extends 'animalerie/base.html' %}
+<a href="{% url 'equipement_detail' id_equip=equipement.id_equip %}">{{ equipement.id_equip }}</a>
+
+{% block content %}
+<style>
+    table {
+        width: auto;
+        border-collapse: collapse;
+    }
+    th, td {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 0px;
+        padding-left: 40px;
+        padding-right: 0px;
+    }
+</style>
+<div style="display: flex; width: 100%;">
+    <div style="flex: 75%;">
+        <table style="margin-left: 90px;">
+            <tr>
+                <th rowspan="5"><img src="{{ equipement.photo }}" width="350" height="350"></td>
+                <td><h1 style="color: black;">{{ equipement.id_equip }}</h1></td>
+            </tr>
+            <tr>
+                <td><h4 style="color: black; font-family: 'Times New Roman', Times, serif;">Disponibilité: {{ equipement.disponibilite }}</h4></td>
+            </tr>
+            <tr>
+                <td><h4 style="color: black; font-family: 'Times New Roman', Times, serif;">Capacité: {{ equipement.capacite }}</h4></td>
+            </tr>
+            <tr>
+                <td><h4 style="color: black; font-family: 'Times New Roman', Times, serif;">Occupants: {{ occupants }}</h4></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 150px; flex: 25%;">
+        <form method="POST" style="color: #000000; font-size: large;">{% csrf_token %}
+            <b> Changer </b> {{ form.as_ul }}
+            <button type="submit" class="btn btn-outline-light">OK</button>
+            <a href="{% url 'animaux_list' %}">Back</a>
+            {% if message != ''%}
+                <div style="width: 100%; margin-right: 0%;" role="alert">
+                    {{message}}
+                </div>
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock %}

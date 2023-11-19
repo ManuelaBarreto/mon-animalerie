@@ -1,0 +1,110 @@
+.page-header {
+    background-color: #4b4507;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 290px;
+}
+ 
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.body {
+    background: linear-gradient(rgba(224, 212, 118, 0.829), rgba(224, 212, 118, 0.829)), 
+                url('https://i.ibb.co/R2HBf3D/Animalerie.jpg');
+    margin: 0;
+}
+
+.body h1 {
+    color: #ffffff;
+    font-family: 'Lobster', cursive;
+}
+
+nav.menu-lateral {
+    width: 270px;
+    height: 100%;
+    background-color: #4b4507;
+    padding: 105px 0px 40px 0%;
+    box-shadow: 3px 0px 0px #c2b523;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu {
+    transition: .4s;
+}
+
+ul li.item-menu:hover {
+    background: #c2b523;
+}
+
+ul li.item-menu a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 40px;
+}
+
+ul li.item-menu a .icon{
+    font-size: 30px;
+    margin-left: 0px;
+}
+
+.container {
+    width: 100%;
+}
+ 
+.animaux h2 a,
+.animaux h2 a:visited,
+.animaux h6 {
+    color: #000000;
+}
+
+.animaux h1,
+.animaux h1 a:visited {
+    color: #000000;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 40px;
+}
+ 
+.equipements h2 a,
+.equipements h2 a:visited,
+.equipements h6 {
+    color: #000000;
+}
+
+.equipements h1,
+.equipements h1 a:visited {
+    color: #000000;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 40px;
+}
+ 
+.equipements > .date,
+.equipements > .actions {
+    float: right;
+}
+
+.equipements h2 {
+    color: #000000;
+}

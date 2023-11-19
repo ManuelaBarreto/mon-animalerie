@@ -1,0 +1,78 @@
+
+{% extends 'animalerie/base.html' %}
+
+{% block content %}
+    <div class="animaux">
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                text-align: center;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+                padding-right: 40px;
+            }
+            </style>
+        <table style="margin-left: 110px">
+            <tr>
+                <th colspan="5"><h1 id="animaux_link">Animaux</h1></th>
+            </tr>
+            <tr>
+                {% for animal in animaux %}
+                    <td><h2><a href="{% url 'animal_detail' id_character=animal.id_character %}">{{ animal.id_character }}</a></h2></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for animal in animaux %}
+                    <td><img src="{{ animal.photo }}" width="200" height="200"></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for animal in animaux %}
+                    <td><h6>{{ animal.type }}</h6></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for animal in animaux %}
+                    <td><h6>{{ animal.race }}</h6></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for animal in animaux %}
+                    <td><h6>{{ animal.etat }}</h6></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for animal in animaux %}
+                    <td><h6>{{ animal.lieu }}</h6></td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+
+    <div class="equipements" style="margin-top: 50px;">
+        <table style="margin-left: 160px">
+            <tr>
+                <th colspan="5"><h1 id="equipements_link">Equipements</h1></th>
+            </tr>
+            <tr>
+                {% for equipement in equipements %}
+                    <td><h2><a href="{% url 'equipement_detail' id_equip=equipement.id_equip %}">{{ equipement.id_equip }}</a></h2></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for equipement in equipements %}
+                    <td><img src="{{ equipement.photo }}" width="200" height="200"></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for equipement in equipements %}
+                    <td><h6>{{ equipement.disponibilite }}</h6></td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+{% endblock %}
